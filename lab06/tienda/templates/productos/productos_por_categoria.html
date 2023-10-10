@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <h1>Productos de la categoría: {{ categoria.nombre }}</h1>
+  <ul>
+    {% for producto in productos %}
+      <li><a href="{% url 'tienda:producto' producto.id %}">{{ producto.nombre }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
